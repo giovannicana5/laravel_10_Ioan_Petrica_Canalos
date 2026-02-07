@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('product.index')}}">I miei prodotti</a>
                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{route('product.create')}}">Creazione dei prodotti</a>
+                </li>
                 {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
                     <ul class="dropdown-menu">

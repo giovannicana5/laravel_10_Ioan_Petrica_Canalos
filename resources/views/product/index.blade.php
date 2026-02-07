@@ -13,15 +13,7 @@
             {{-- @dd($products) --}}
             @foreach($products as $product)
             <div class="col-12 col-md-4 mb-5">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://picsum.photos/300" class="card-img-top" alt="Immagine qualsiasi">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$product->name}}</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">{{$product->price}} €</h6>
-                        <p class="card-text">{{$product->description}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+                <x-card :product=$product />
             </div>
             @endforeach
         </div>
