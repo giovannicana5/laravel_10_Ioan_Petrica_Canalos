@@ -8,18 +8,8 @@
             </div>
         </div>
     </header>
-    @if(session('message'))
-        <div class="alert alert-success">{{session('message')}}</div>
-    @endif
-    @if($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    <x-display-message />
+    <x-display-errors />
     <div class="container">
         <div class="row mt-5 justify-content-center my-5">
             <div class="col-12 col-md-6 justify-content-center">

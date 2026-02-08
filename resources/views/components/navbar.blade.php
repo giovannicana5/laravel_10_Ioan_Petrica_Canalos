@@ -12,9 +12,34 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('product.index')}}">I miei prodotti</a>
                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('product.create')}}">Creazione dei prodotti</a>
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('product.create')}}">Creazione dei prodotti</a>
+                    </li>
+                @endauth
+                @guest
+                @endguest
+                {{-- @dd(Auth::user()->email) --}}
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('register')}}">Registrati</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('login')}}">Accedi</a>
+                </li>
+                @endguest
+                {{-- @else --}}
+                @auth
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Benvenuto {{Auth::user()->name}}</a>
+                </li>
+                <li class="nav-item">
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <button class="nav-link" type="submit">Logout</button>
+                    </form>
+                </li>
+                @endauth
                 {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
                     <ul class="dropdown-menu">
